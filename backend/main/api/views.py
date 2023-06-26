@@ -56,7 +56,7 @@ class LogoutView(KnoxLogoutView):
 
 
 
-class UsersViewset(viewsets.ViewSet):
+class UsersViewset(viewsets.ModelViewSet):
     queryset = models.User.objects.filter(is_active=True)
     serializer_class = serializers.UserSerializer
 
@@ -65,7 +65,7 @@ class UsersViewset(viewsets.ViewSet):
 
 
 
-class ArticleCategoryViewset(viewsets.ViewSet):
+class ArticleCategoryViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.ArticleCategory)
     serializer_class = serializers.ArticleCategorySerializer
 
@@ -74,7 +74,7 @@ class ArticleCategoryViewset(viewsets.ViewSet):
 
 
 
-class ArticleViewset(viewsets.ViewSet):
+class ArticleViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.Article)
     serializer_class = serializers.ArticleSerializer
 
@@ -84,7 +84,7 @@ class ArticleViewset(viewsets.ViewSet):
 
 
 
-class NewsLetterViewset(viewsets.ViewSet):
+class NewsLetterViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.NewsLetter)
     serializer_class = serializers.NewsLetterSerializer
 
@@ -93,7 +93,7 @@ class NewsLetterViewset(viewsets.ViewSet):
 
 
 
-class DownloadCategoryViewset(viewsets.ViewSet):
+class DownloadCategoryViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.DownloadCategory)
     serializer_class = serializers.DownloadCategorySerializer
 
@@ -102,7 +102,7 @@ class DownloadCategoryViewset(viewsets.ViewSet):
 
 
 
-class DownloadViewset(viewsets.ViewSet):
+class DownloadViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.Download)
     serializer_class = serializers.DownloadSerializer
 
@@ -111,7 +111,7 @@ class DownloadViewset(viewsets.ViewSet):
 
 
 
-class JournalCategoryViewset(viewsets.ViewSet):
+class JournalCategoryViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.JournalCategory)
     serializer_class = serializers.JournalCategorySerializer
 
@@ -121,7 +121,7 @@ class JournalCategoryViewset(viewsets.ViewSet):
 
 
 
-class JournalAuthorViewset(viewsets.ViewSet):
+class JournalAuthorViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.JournalAuthor)
     serializer_class = serializers.JournalAuthorSerializer
 
@@ -130,7 +130,7 @@ class JournalAuthorViewset(viewsets.ViewSet):
 
 
 
-class JournalViewset(viewsets.ViewSet):
+class JournalViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.Journal)
     serializer_class = serializers.JournalSerializer
 
@@ -140,7 +140,7 @@ class JournalViewset(viewsets.ViewSet):
 
 
 
-class JournalPurchaseViewset(viewsets.ViewSet):
+class JournalPurchaseViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.JournalPurchase)
     serializer_class = serializers.JournalPurchaseSerializer
 
@@ -150,7 +150,7 @@ class JournalPurchaseViewset(viewsets.ViewSet):
 
 
 
-class QuizViewset(viewsets.ViewSet):
+class QuizViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.Quiz)
     serializer_class = serializers.QuizSerializer
 
@@ -160,7 +160,7 @@ class QuizViewset(viewsets.ViewSet):
 
 
 
-class QuizPostViewset(viewsets.ViewSet):
+class QuizPostViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.QuizPost)
     serializer_class = serializers.QuizPostSerializer
 
@@ -171,7 +171,7 @@ class QuizPostViewset(viewsets.ViewSet):
 
 
 
-class PicOfWeekImageViewset(viewsets.ViewSet):
+class PicOfWeekImageViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.PicOfWeekImage)
     serializer_class = serializers.PicOfWeekImageSerializer
 
@@ -180,7 +180,7 @@ class PicOfWeekImageViewset(viewsets.ViewSet):
 
 
 
-class PicOfWeekViewset(viewsets.ViewSet):
+class PicOfWeekViewset(viewsets.ModelViewSet):
     queryset = init_queryset(models.PicOfWeek)
     serializer_class = serializers.PicOfWeekSerializer
 
