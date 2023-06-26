@@ -35,8 +35,14 @@ class NewsLetter(AbstractModel):
     email = m.EmailField(max_length=MAX_LENGTH)
 
 
+
+
+
 class DownloadCategory(AbstractModel):
     name = m.CharField(max_length=MAX_LENGTH)
+    
+
+
     
 
 
@@ -49,15 +55,24 @@ class Download(AbstractModel):
 
 
 
+
+
+
 class JournalCategory(AbstractModel):
     name = m.CharField(max_length=MAX_LENGTH)
     parent = m.ForeignKey('JournalCategory', on_delete=m.CASCADE)
 
 
 
+
+
+
 class JournalAuthor(AbstractModel):
     names = m.CharField(max_length=MAX_LENGTH)
     title = m.CharField(max_length=MAX_LENGTH)
+
+
+
 
 
 
