@@ -27,7 +27,7 @@ class Article(AbstractModel):
     title = m.CharField(max_length=MAX_LENGTH)
     thumbnail = m.ImageField(upload_to='articles')
     content = m.TextField()
-    categories = m.ForeignKey(ArticleCategory, on_delete=m.CASCADE)
+    category = m.ForeignKey(ArticleCategory, on_delete=m.CASCADE)
 
 
 class NewsLetter(AbstractModel):
@@ -53,6 +53,8 @@ class JournalCategory(AbstractModel):
     name = m.CharField(max_length=MAX_LENGTH)
     parent = m.ForeignKey('JournalCategory', on_delete=m.CASCADE)
 
+
+
 class JournalAuthor(AbstractModel):
     names = m.CharField(max_length=MAX_LENGTH)
     title = m.CharField(max_length=MAX_LENGTH)
@@ -68,6 +70,7 @@ class Journal(AbstractModel):
     file = m.FileField(upload_to='journals')
     price = m.PositiveIntegerField(default=0)
     authors = m.ManyToManyField(JournalAuthor)
+    categories = m.ManyToManyField(JournalCategory)
 
 
 
@@ -93,10 +96,18 @@ class QuizPost(AbstractModel):
     content = m.TextField()
     likes = m.PositiveIntegerField(default=0, editable=False)
 
+    class Meta(AbstractModel.Meta):
+        abstract = False
+        ordering = ('-likes')
+
+
 
 
 class PicOfWeekImage(AbstractModel):
     image = m.ImageField(upload_to='pic-of-week')
+
+
+
 
 
 class PicOfWeek(AbstractModel):
