@@ -140,7 +140,7 @@ class JournalViewset(viewsets.ViewSet):
 
 
 
-class JournalPurchase(viewsets.ViewSet):
+class JournalPurchaseViewset(viewsets.ViewSet):
     queryset = init_queryset(models.JournalPurchase)
     serializer_class = serializers.JournalPurchaseSerializer
 
