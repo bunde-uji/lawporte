@@ -113,7 +113,7 @@ class QuizPost(AbstractModel):
 
     class Meta(AbstractModel.Meta):
         abstract = False
-        ordering = ('-likes')
+        ordering = ('-likes',)
 
 
 

@@ -11,7 +11,7 @@ def err_bad_request(title, msg):
 
 
 def init_queryset(klass):
-    return klass.models.filter(flag=True)
+    return klass.objects.filter(flag=True)
 
 
 # Create your views here. 
@@ -57,7 +57,7 @@ class LogoutView(KnoxLogoutView):
 
 
 class UsersViewset(viewsets.ViewSet):
-    queryset = init_queryset(models.User)
+    queryset = models.User.objects.filter(is_active=True)
     serializer_class = serializers.UserSerializer
 
 
